@@ -32,14 +32,14 @@ public class AccountRestController {
     public Account updateAccount(@RequestBody Account account) {
         return accountService.updateAccount(account);
     }
-    @PostMapping("/{id}/credit")
+    @PostMapping("accounts/{id}/credit")
     public Account credit(
             @PathVariable UUID id,
             @RequestParam BigDecimal amount) {
         return accountService.credit(id, amount);
     }
 
-    @PostMapping("/{id}/debit")
+    @PostMapping("accounts/{id}/debit")
     public Account debit(
             @PathVariable UUID id,
             @RequestParam BigDecimal amount) {
