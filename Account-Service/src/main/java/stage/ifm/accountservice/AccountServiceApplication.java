@@ -27,7 +27,7 @@ public class AccountServiceApplication {
                     .CustomerReference("CUST001")
                     .status( StatusAccount.ACTIVE)
                     .currency("MAD")
-                    .balance(5000.)
+                    .balance(5000)
                     .build());
             accountRepository.save(Account.builder()
                     .id(UUID.randomUUID())
