@@ -8,6 +8,7 @@ import stage.ifm.accountservice.domain.Account;
 import stage.ifm.accountservice.domain.StatusAccount;
 import stage.ifm.accountservice.repository.AccountRepository;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -27,14 +28,14 @@ public class AccountServiceApplication {
                     .CustomerReference("CUST001")
                     .status( StatusAccount.ACTIVE)
                     .currency("MAD")
-                    .balance(5000)
+                    .balance(new BigDecimal("5000.00"))
                     .build());
             accountRepository.save(Account.builder()
                     .id(UUID.randomUUID())
                     .CustomerReference("CUST002")
                     .status( StatusAccount.ACTIVE)
                     .currency("MAD")
-                    .balance(12000.)
+                    .balance(new BigDecimal("12000"))
                     .build());
 
             accountRepository.save(Account.builder()
@@ -42,10 +43,8 @@ public class AccountServiceApplication {
                     .CustomerReference("CUST003")
                     .status( StatusAccount.BLOCKED)
                     .currency("MAD")
-                    .balance(2500.)
+                    .balance(new BigDecimal("25000"))
                     .build());
-
-
 
         };
     }
